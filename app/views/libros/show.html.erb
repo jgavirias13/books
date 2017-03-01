@@ -1,0 +1,35 @@
+<div class="ui container">
+  <div class="ui relaxed divided items">
+    <div class="item">
+      <div class="ui medium image">
+        <%= image_tag @libro.imagen.url(:medium) %>
+      </div>
+      <div class="content">
+        <a class="header"><%= @libro.titulo %>, </a>
+        <%= @libro.autor %>
+        <div class="meta">
+          <a><%= @libro.created_at.strftime("%b %d %Y, %H:%M") %></a>
+        </div>
+        <div class="description">
+          <%= @libro.descripcion %>
+        </div>
+        <div class="extra">
+          <%= @libro.user.email %>
+        </div>
+
+        <% if current_user %>
+
+          <% if can? :update, @libro %>
+            <%= link_to "Editar", edit_libro_path(@libro), class: "ui teal small button" %>
+          <% end %>
+
+          <% if can? :destroy, @libro %>
+            <%= link_to "Borrar", libro_path(@libro), method: :delete, data: {confirm: "¿Estas seguro?"}, class: "ui red small button" %>
+          <% end %>
+
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

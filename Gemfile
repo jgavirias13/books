@@ -38,6 +38,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'devise'
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+gem 'paperclip', '~> 5.0.0'
+gem 'cancancan', '~> 1.10'
+gem "rolify"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

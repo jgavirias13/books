@@ -1,0 +1,34 @@
+<div class="ui attached message">
+  <div class="header">
+    Envía una nueva reseña
+  </div>
+  <p>Llena todos los campos</p>
+</div>
+
+<%= form_for @libro, :html => {:class => "ui form attached fluid segment"} do |f| %>
+
+  <div class="field">
+    <%= f.label :imagen, class: "ui teal button" %>
+    <%= f.file_field :imagen, style: "display: none" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :titulo %>
+    <%= f.text_field :titulo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :autor %>
+    <%= f.text_field :autor %>
+  </div>
+
+  <div class="field">
+    <%= f.label :descripción %>
+    <%= f.text_area :descripcion %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Enviar reseña", class: "ui blue submit button" %>
+  </div>
+
+<% end %>
