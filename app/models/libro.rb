@@ -5,4 +5,12 @@ class Libro < ApplicationRecord
   validates_with AttachmentSizeValidator, attributes: :imagen, less_than: 2.megabytes
   validates :imagen, presence: true
   belongs_to :user
+
+  def self.search(search)
+    if search
+      where('titulo LIKE ? or autor LIKE ?', "%#{search}%", "%#{search}%")
+    else
+      scoped
+    end
+  end
 end

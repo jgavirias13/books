@@ -3,6 +3,16 @@
     <img src="http://semantic-ui.com/examples/assets/images/logo.png">
   </div>
   <%= link_to "Libros", libros_path, class: "item" %>
+  <div class="item">
+  <div class="ui search">
+    <%= form_tag "/libros/find" do %>
+    <div class="ui icon input">
+      <%= text_field_tag :search_string %>
+      <i class="search icon"></i>
+    </div>
+      <% end %>
+  </div>
+  </div>
   <div class="menu right">
     <% if current_user %>
       <%= link_to current_user.email, edit_user_registration_path, class: "item" %>

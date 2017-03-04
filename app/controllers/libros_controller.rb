@@ -1,7 +1,7 @@
 class LibrosController < ApplicationController
   before_action :find_libro, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
-  load_and_authorize_resource :except => [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :find]
+  load_and_authorize_resource :except => [:index, :show, :find]
 
   def index
     @libros = Libro.all.order("created_at DESC")
@@ -39,6 +39,10 @@ class LibrosController < ApplicationController
   def destroy
     @libro.destroy
     redirect_to libros_path, :notice => "Se ha borrado con exito"
+  end
+
+  def find
+    @libros = Libro.search(params[:search_string])
   end
 
   private
