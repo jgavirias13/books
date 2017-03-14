@@ -11,7 +11,7 @@ default: &default
   pool: 5
   host: 10.131.137.216
   port: 3306
-  username: root
+  username: booksRoot
   password: bkiOBN51
 
 development:
