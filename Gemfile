@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'devise'
+gem "devise_ldap_authenticatable"
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'paperclip', '~> 5.0.0'
 gem 'cancancan', '~> 1.10'
