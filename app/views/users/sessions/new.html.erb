@@ -4,9 +4,9 @@
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => "ui form attached fluid segment"}) do |f| %>
 
     <div class="field">
-      <%= f.label :email %>
+      <%= f.label :username %>
       <div class="ui left icon input">
-        <%= f.email_field :email, autofocus: true %>
+        <%= f.text_field :username, autofocus: true %>
         <i class="users icon"></i>
       </div>
     </div>
