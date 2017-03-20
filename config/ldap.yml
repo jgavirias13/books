@@ -22,12 +22,12 @@ authorizations: &AUTHORIZATIONS
 ## Environment
 
 development:
-  host: 10.131.137.180
+  host: <%= Rails.application.secrets[:ldap][:host] %>
   port: 389
   attribute: sAMAccountName
   base: dc=DIS,dc=local
-  admin_user: user1@DIS.local
-  admin_password: eafit.2017
+  admin_user: <%= Rails.application.secrets[:ldap][:user] %>
+  admin_password: <%= Rails.application.secrets[:ldap][:password] %>
   ssl: false
   # <<: *AUTHORIZATIONS
 

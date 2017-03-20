@@ -9,10 +9,10 @@ default: &default
   encoding: utf8
   reconnect: false
   pool: 5
-  host: 10.131.137.216
+  host: <%= Rails.application.secrets[:database][:host] %>
   port: 3306
-  username: booksRoot
-  password: bkiOBN51
+  username: <%= Rails.application.secrets[:database][:username] %>
+  password: <%= Rails.application.secrets[:database][:password] %>
 
 #default: &default
 #  adapter: sqlite3
