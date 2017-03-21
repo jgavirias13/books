@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  filter_parameter_logging :password
   rescue_from DeviseLdapAuthenticatable::LdapException do |exception|
     render :text => exception, :status => 500
   end
